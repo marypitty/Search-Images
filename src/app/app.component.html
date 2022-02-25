@@ -1,0 +1,91 @@
+<!-- <router-outlet> </router-outlet>
+
+<h1>{{ title }}</h1>
+
+<div class="container">
+    <div class="mb-3">
+        <label for="query" class="form-label"></label>
+        <input type="text" id="query" class="form-control" placeholder="Search Image" [(ngModel)]="query" />
+        <br />
+    </div>
+
+    <div class="mb-3">
+        <label for="color" class="form-label"></label>
+        <input type="text" id="color" class="form-control" placeholder="Select color" [(ngModel)]="color" />
+        <br />
+    </div>
+
+    <div class="mb-3">
+        <label for="orientation" class="form-label"></label>
+        <select name="orientation" id="orientation" [(ngModel)]="orientation" class="form-select">
+      <option value="landscape">landscape</option>
+      <option value="portrait">portrait</option>
+      <option value="squarish">squarish</option>
+    </select>
+    </div>
+
+    <button type="button" (click)="downloadPhotos(query, orientation, color)">
+    Search Image
+  </button>
+</div>
+
+<div class="img-thumbnail" *ngFor="let i of result">
+    <img src="{{ i.urls.small }}" alt="" />
+</div>
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p> -->
+
+
+
+
+
+<div class="container">
+    <div class="logo">
+        <img alt="Google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+    </div>
+    <div class="bar">
+        <input class="searchbar" type="text" title="Search" id="query" placeholder="Search Image" [(ngModel)]="query">
+        <a href="#"> <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a>
+    </div>
+
+    <div class="bar2">
+        <!--  <input class="searchbar" type="text" title="Search" id="color" placeholder="Select color" [(ngModel)]="color"> -->
+        <label for="color" class="form-label"></label>
+        <select name="color" id="color" [(ngModel)]="color" class="form-select">
+<option disabled="" selected="" value="">Select image color</option>
+          <option value="blackwhite">Black and White</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="yellow">Yellow</option>
+          <option value="orange">Orange</option>
+          <option value="red">Red</option>
+          <option value="purple">Purple</option>
+          <option value="magenta">Magenta</option>
+          <option value="green">Green</option>
+          <option value="teal">Teal</option>
+          <option value="blue">Blue</option>
+    </select>
+
+    </div>
+
+    <div class="bar2">
+        <label for="orientation" class="form-label"></label>
+        <select name="orientation" id="orientation" [(ngModel)]="orientation" class="form-select">
+ <option disabled="" selected="" value="">Select image size</option>
+      <option value="landscape">landscape</option>
+      <option value="portrait">portrait</option>
+      <option value="squarish">squarish</option>
+    </select>
+    </div>
+
+
+    <div class="buttons">
+        <button class="button" type="button" (click)="downloadPhotos(query, orientation, color)">Google Search</button>
+        <button class="button" type="button">I'm Feeling Lucky</button>
+    </div>
+</div>
+
+
+<div class="img-thumbnail" *ngFor="let i of result">
+    <img class="img-result" src="{{ i.urls.small }}" alt="" />
+</div>
